@@ -1,31 +1,61 @@
-# 📊 Dashboard de Análise de Vendas - Indústria de Chocolates
+# Dashboard de Análise de Vendas — Indústria de Chocolates
 
-Este repositório contém o desenvolvimento de um dashboard estratégico criado no **Power BI** para a análise de desempenho de vendas de uma indústria de chocolates. O projeto foi estruturado com foco em boas práticas de design (Dark Theme), modelagem de dados e aplicação de inteligência de tempo em DAX.
+Dashboard em Power BI para análise de desempenho comercial de uma
+indústria de chocolates, com modelagem dimensional em Star Schema
+e métricas de inteligência de tempo em DAX.
 
----
-## 🎯 Objetivos do Projeto
-* **Centralizar Métricas:** Consolidação de indicadores cruciais como faturamento global, crescimento de vendas e volume comercializado.
-* **Análise Temporal:** Acompanhamento dinâmico do comportamento de vendas ao longo dos anos, identificando sazonalidades e tendências.
-* **Foco Comercial:** Mapeamento de performance geográfica (por países), ranking dos principais produtos e identificação dos maiores vendedores (*Top 5 Vendedores*).
+## Fonte dos Dados
 
----
+Dataset público: [NOME DO DATASET NO KAGGLE — cole o link aqui]
 
-## 📈 Principais Métricas & Insights Identificados
-* **Faturamento Consolidado:** O modelo registrou um total acumulado de **$6,02 Milhões em Vendas**.
-* **Alerta de Tendência:** Foi detectado um **recuo de -23,87% no crescimento anual**, servindo como um indicador estratégico para ações corretivas de gestão.
-* **Volume Comercial:** Total de mais de **197,57 Mil itens movimentados**, mantendo uma média de vendas consistente de **7,58 Mil**.
+## Modelagem de Dados
 
----
+O modelo segue o padrão Star Schema, com 1 tabela fato e 4 tabelas
+dimensão:
 
-## 🛠️ Tecnologias e Ferramentas Utilizadas
-* **Power BI Desktop:** Construção do modelo, tratamento de dados e camada visual.
-* **Power Query:** Limpeza, padronização e transformação da base de dados bruta.
-* **Linguagem DAX:** Criação de medidas calculadas e métricas de inteligência de tempo para análise evolutiva ano a ano.
-* **Design UI/UX:** Aplicação de um layout personalizado baseado em cartões flutuantes em tons escuros e dourados, garantindo alto contraste e leitura executiva limpa.
+**Fato Vendas** (grão: [PREENCHER — ex: "uma linha por item vendido
+em um pedido, em uma data, para um vendedor"])
 
----
+**Dimensões:**
+- Dim Produto
+- Dim Data
+- Dim Vendedor
+- Dim País
 
-## 🧑‍💻 Como Visualizar este Projeto no seu PC
-1. Certifique-se de ter o **Power BI Desktop** instalado em sua máquina.
-2. Faça o download do arquivo `Chocolate.pbix` contido neste repositório.
-3. Abra o arquivo para explorar interativamente o modelo de dados, os relacionamentos e as fórmulas DAX aplicadas.
+*(ajuste os nomes das dimensões reais que você usou — coloquei os que
+fazem sentido pelo contexto de vendas)*
+
+## Tratamento de Dados (Power Query)
+
+- Padronização de texto (nomes de produtos/vendedores em formato consistente)
+- Tratamento de valores nulos
+- Remoção de duplicatas
+
+## Medidas DAX
+
+```dax
+[COLE AQUI PELO MENOS 2-3 MEDIDAS REAIS, por exemplo a que gerou
+os -23,87% de crescimento anual — algo como:]
+
+Vendas Ano Anterior = CALCULATE([Total Vendas], SAMEPERIODLASTYEAR('Data'[Data]))
+
+Crescimento % = DIVIDE([Total Vendas] - [Vendas Ano Anterior], [Vendas Ano Anterior])
+```
+
+## Principais Achados
+
+- Faturamento consolidado de $6,02M em vendas
+- Recuo de -23,87% no crescimento anual — [PREENCHER: qual hipótese
+  isso levanta? sazonalidade, perda de mercado, período incompleto
+  no dataset?]
+- Volume total de 197,57 mil itens comercializados
+
+## Tecnologias
+
+Power BI Desktop · Power Query (M) · DAX
+
+## Como Visualizar
+
+1. Instale o Power BI Desktop
+2. Baixe o arquivo `Chocolate.pbix` deste repositório
+3. Abra para explorar o modelo, relacionamentos e medidas DAX
