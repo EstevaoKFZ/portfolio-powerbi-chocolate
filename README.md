@@ -4,9 +4,7 @@ Dashboard em Power BI para análise de desempenho comercial de uma
 indústria de chocolates, com modelagem dimensional em Star Schema
 e métricas de inteligência de tempo em DAX.
 
-## Fonte dos Dados
 
-Dataset público: [NOME DO DATASET NO KAGGLE — cole o link aqui]
 
 ## Modelagem de Dados
 
