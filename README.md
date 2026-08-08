@@ -17,8 +17,7 @@ dimensão:
 - Dim Vendedor
 - Dim País
 
-*(ajuste os nomes das dimensões reais que você usou — coloquei os que
-fazem sentido pelo contexto de vendas)*
+
 
 ## Tratamento de Dados (Power Query)
 
