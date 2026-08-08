@@ -26,16 +26,8 @@ fazem sentido pelo contexto de vendas)*
 - Tratamento de valores nulos
 - Remoção de duplicatas
 
-## Medidas DAX
 
-```dax
-[COLE AQUI PELO MENOS 2-3 MEDIDAS REAIS, por exemplo a que gerou
-os -23,87% de crescimento anual — algo como:]
 
-Vendas Ano Anterior = CALCULATE([Total Vendas], SAMEPERIODLASTYEAR('Data'[Data]))
-
-Crescimento % = DIVIDE([Total Vendas] - [Vendas Ano Anterior], [Vendas Ano Anterior])
-```
 
 ## Principais Achados
 
