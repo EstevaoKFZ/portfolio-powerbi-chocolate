@@ -11,9 +11,6 @@ e métricas de inteligência de tempo em DAX.
 O modelo segue o padrão Star Schema, com 1 tabela fato e 4 tabelas
 dimensão:
 
-**Fato Vendas** (grão: [PREENCHER — ex: "uma linha por item vendido
-em um pedido, em uma data, para um vendedor"])
-
 **Dimensões:**
 - Dim Produto
 - Dim Data
